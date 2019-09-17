@@ -38,4 +38,4 @@ app.get('/', function(request, response){
 		response.redirect('/baristas/login')
 	})
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
