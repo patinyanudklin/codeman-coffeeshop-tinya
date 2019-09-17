@@ -1,0 +1,10 @@
+extends ../layout
+include ../mixin/orderDrinksList
+block title
+	='Orders - Drinks List'
+
+block content
+	h1.title
+			= 'Order: '+ order.id
+	.field
+		+orderDrinksList(order, 'VIEW')

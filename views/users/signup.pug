@@ -1,0 +1,24 @@
+extends ../layout
+
+block title
+	='My Beverage - Sign Up'
+
+block content
+	h1.title New Barista
+	form(action="/baristas", method="POST")
+		.field
+			.control
+				input.input(name="name", placeholder="Name")
+		.field
+			.control
+				input.input(name="username", placeholder="username")
+		.field
+			.control
+				input.input(type="password", name="password", placeholder="password")
+		.field
+			.control
+				button.button.is-link.is-fullwidth Add
+		.field
+			.control
+				a(href="/baristas", style="text-align:center")
+					p Back to baristas

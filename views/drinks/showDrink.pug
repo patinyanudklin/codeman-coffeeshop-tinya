@@ -1,0 +1,26 @@
+extends ../layout
+
+block title
+	='Drink - Show'
+
+block content
+	h1.title 
+		=drink.drink_name
+	div
+		b Image
+	div
+		img.field(src=`${drink.imgUrl}`)
+	b Price
+	div(style="text-align: justify; padding-bottom:inherit")
+		=drink.price+' ฿'
+	div
+		.field
+			a(href=`/drinks/${drink.id}/edit`, style="text-align: center")
+				button.button.is-link.is-fullwidth Edit drink
+		.field
+			a(href=`/drinks/${drink.id}?_method=delete`, style="text-align: center")
+				button.button.is-danger.is-fullwidth Delete drink
+		.field
+			a(href=`/drinks`, style="text-align: center")
+				p Back to drinks
+				

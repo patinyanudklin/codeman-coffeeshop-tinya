@@ -1,0 +1,19 @@
+extends ../layout
+
+block title
+	='My Beverage - Login'
+
+block content
+
+	h1.title Coffee Shop
+
+	form(action="/baristas/session", method="POST")
+		.field
+			.control
+				input.input(name="username", placeholder="username")
+		.field
+			.control
+				input.input(type="password", name="password", placeholder="password")
+		.field
+			.control
+				button.button.is-link.is-fullwidth Login

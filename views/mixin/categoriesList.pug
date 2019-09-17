@@ -1,0 +1,7 @@
+mixin categoriesList(categories)
+	- for(let i=0; i < categories.length; i+= 1)
+		div.box(style="border-radius: 0px; position: relative")
+			p(style="text-align: left")
+			= categories[i].category
+			a.delete(href=`/categories/${categories[i].id}?_method=delete`, style=`position: absolute;
+			top:0; right:0;`)

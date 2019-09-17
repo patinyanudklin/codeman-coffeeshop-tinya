@@ -1,0 +1,24 @@
+mixin newDrink(categories)
+	h1.title New Drink
+	form(action="/drinks", method="POST")
+		if(false)
+			.field
+				div.select
+					select(name="category")
+						-for(let i=0; i< categories.length; i+=1)
+								option=categories[i].category
+		.field
+			.control
+				input.input(name="drinkName", placeholder="Name")
+		.field
+			.control
+				input.input(name="drinkImgUrl", placeholder="Image Url")
+		.field
+			.control
+				input.input(name="drinkPrice", placeholder="Price")
+		.field
+			.control
+				button.button.is-link.is-fullwidth Save Drink
+		a(href=`/drinks/`, style="text-align: center")
+			p Back to drinks
+

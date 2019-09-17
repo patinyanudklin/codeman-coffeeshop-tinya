@@ -1,0 +1,14 @@
+mixin drinksFeed(drinks)
+	- for(let i=0; i < drinks.length; i+= 1)
+		.field
+			a(href=`/drinks/${drinks[i].id}`)
+				div.box(style="border-radius: 0px")
+					div.columns
+						div.column(style="text-align: center")
+							img(src=`${drinks[i].imgUrl}`, alt=drinks[i].drink_name, style="width:75px")
+						div.column
+							p(style="text-align: left")
+							= drinks[i].drink_name
+							p
+							= drinks[i].price+' ฿'
+

@@ -1,0 +1,10 @@
+mixin newCategory()
+	h1.title New Categories
+	form(action="/categories", method="POST")
+		.field
+			.control
+				input.input(name="categoryName")
+		.field
+			.control
+				button.button.is-link.is-fullwidth Create category
+

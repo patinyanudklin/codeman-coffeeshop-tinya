@@ -1,0 +1,8 @@
+mixin baristasFeed(baristas)
+	- for(let i=0; i < baristas.length; i+= 1)
+			div.box(style="border-radius: 0px; position: relative")
+				p(style="text-align: left")
+					= baristas[i].name
+				
+				a.delete(href=`/baristas?_method=delete&id=${baristas[i].id}`, style="position: absolute; top: -2; right: -2")
+

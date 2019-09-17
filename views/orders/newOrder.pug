@@ -1,0 +1,21 @@
+extends ../layout
+include ../mixin/orderDrinksList
+block title
+	='Order - New'
+
+block content
+	h1.title New Order
+	.field
+		= "Order Id: " + order.id
+	form(action="/order_items", method="POST")
+		.field
+			.control
+				input.input(name="drink")
+		.field
+			.control
+				button.button.is-link.is-fullwidth Add drink
+	.field
+		+orderDrinksList(order.drinks)
+	.field
+		.control
+			

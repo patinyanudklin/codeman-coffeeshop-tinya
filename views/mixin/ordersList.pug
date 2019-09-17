@@ -1,0 +1,8 @@
+mixin ordersList(orders)
+	- for(let i=0; i < orders.length; i+= 1)
+		.field
+			a(href=`/orders/${orders[i].id}/edit`)
+				div.box(style="border-radius: 0px")
+					p(style="text-align: left")
+					= orders[i].id
+

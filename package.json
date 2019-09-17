@@ -1,0 +1,31 @@
+{
+  "name": "myBeverage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon app.js",
+    "sequelize": "sequelize"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "basic-auth": "^2.0.1",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "pug": "^2.0.4",
+    "sequelize": "^5.13.1",
+    "sequelize-cli": "^5.5.1"
+  }
+}

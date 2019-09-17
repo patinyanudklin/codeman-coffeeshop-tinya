@@ -1,0 +1,56 @@
+extends ../layout
+include ../mixin/orderDrinksList
+include ../mixin/drinksFeed
+block title
+
+	if mode=='NEW'
+		='Order - New'
+	else if mode=='EDIT'
+		='Order - Edit'
+
+block content
+
+	h1.title
+		='Order #'+ order.id
+	if mode!='VIEW'
+		.field
+			h1.title Drink
+		.field
+			p(style="font-size:20px") Search
+		form(action="/", method="POST")
+			.field
+				.control
+					input.input(name="query", placeholder="Search Drink")
+			.field
+				.control
+					div(id="searchResult")
+						
+	.field
+		h1.title Items
+	.field
+		if mode=='EDIT' || mode=='VIEW'
+			+orderDrinksList(order, mode)
+	.field
+		h1.title 
+			='Total '+ order.totalPrice + ' ฿'
+	if mode!='VIEW'
+		h1.title Add to Items
+		form(action="/order_items", method="POST")
+			.field
+				.control
+					input.input(name="orderId", type="hidden", value=`${order.id}`)
+			.field
+				.control
+					input.input(name="drinkCode", placeholder="Drink Code")
+			.field
+				.control
+					input.input(name="quantity", placeholder="Quantity")
+			.field
+				.control
+					button.button.is-link.is-fullwidth Add drink
+			.field
+				.control
+					a(href="/orders", style="text-align: center")
+						div
+							Back to orders
+					

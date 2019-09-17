@@ -1,0 +1,26 @@
+extends ../layout
+include ../mixin/drinksFeed
+include ../mixin/drinksCategories
+
+block title
+	='Drinks - List'
+
+block content
+	h1.title My Beverage
+
+	if(false)
+		form(action="/drinks/search", method="GET")
+			.field
+				.control
+					input.input(name="q")
+			.field
+				.control
+					button.button.is-link.is-fullwidth Search
+			.field
+				+drinksCategories(categories)
+	.field
+		+drinksFeed(drinks)
+	.field
+		.control
+			a(href=`/drinks/new`)
+				button.button.is-link.is-fullwidth Add new drink

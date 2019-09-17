@@ -1,0 +1,23 @@
+mixin editDrink(drinkId ,categories)
+	h1.title Edit Drink
+	form(action=`/drinks/${drinkId}?_method=PUT`, method="POST")
+		.field
+			div.select
+				select(name="category")
+					-for(let i=0; i< categories.length; i+=1)
+							option=categories[i].category
+		.field
+			.control
+				input.input(name="drinkName", placeholder="Name")
+		.field
+			.control
+				input.input(name="drinkImgUrl", placeholder="Image Url")
+		.field
+			.control
+				input.input(name="drinkPrice", placeholder="Price")
+		.field
+			.control
+				button.button.is-link.is-fullwidth Save Drink
+		a(href=`/drinks/`, style="text-align: center")
+			p Back to drinks
+

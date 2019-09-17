@@ -1,0 +1,17 @@
+extends ../layout
+include ../mixin/categoriesList
+
+block title
+	='Categories'
+
+block content
+	h1.title My Categories
+	.field
+		.control
+			a(href="/categories/new")
+				button.button.is-link.is-fullwidth Add new category
+	.field
+		a(href="/drinks", style="text-align: center")
+			p Back to Drink
+	.field
+		+categoriesList(categories)

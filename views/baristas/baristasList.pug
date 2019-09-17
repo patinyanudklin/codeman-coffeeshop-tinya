@@ -1,0 +1,9 @@
+extends ../layout
+include ../mixin/baristasFeed
+block title
+	='Baristas - List'
+
+block content
+	h1.title Baristas List
+	.field
+		+baristasFeed(baristas)
