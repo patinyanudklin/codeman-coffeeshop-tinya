@@ -26,8 +26,8 @@ router.route('/')
 	})
 	.post(urlencodedParser, basicA, async function(request, response){
 		// create new drink
-		const {category, drinkName, drinkImgUrl, drinkPrice} = request.body
-		await myBevDB.createDrink(drinkName, category, drinkPrice, drinkImgUrl)
+		const {category, name, imgUrl, price} = request.body
+		await myBevDB.createDrink(name, category, price, imgUrl)
 		response.redirect('/drinks/')
 	})
 

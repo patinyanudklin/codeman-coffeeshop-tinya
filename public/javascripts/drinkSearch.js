@@ -1,15 +1,12 @@
 $(function(){
 	var card = function(drink){
 		return `
-				<div class="box" style="border-radius: 0px">
-					<div class="columns">
-						<div class="column" style="text-align: center">
-							<img src="`+drink.imgUrl+`" alt="`+drink.drink_name+`" style="width:75px">
-						</div>
-						<div class="column">
-							<p style="text-align: left"> Id:`+drink.id+` `+drink.drink_name+`</p>
-							<p>`+ drink.price+` ฿</p>
-						</div>
+				<div class="panel-block" style="border-radius: 0px">
+					<div class="column" style="text-align: center">
+						<img src="`+drink.imgUrl+`" alt="`+drink.drink_name+`" style="width:75px">
+					</div>
+					<div class="column">
+						<p style="text-align: left"> Id:`+drink.id+` `+drink.drink_name+` `+ drink.price+` ฿</p>
 					</div>
 				</div>
 				`
@@ -17,7 +14,7 @@ $(function(){
 	var input = $('[name="query"]')
 	
 	// list to add the data
-	var list = $('#searchResult')
+	var list = $('#drinks')
 	$(input).on('input', function(event){
 		clearTimeout(this.delay)
 		this.delay = setTimeout(function(){

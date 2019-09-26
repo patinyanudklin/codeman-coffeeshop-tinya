@@ -1,18 +1,12 @@
 mixin orderDrinksList( order, mode)
 	- let drinks = order.drinks
-	- for(let i=0; i < drinks.length; i+= 1)
-		.field
-			div.box(style="border-radius: 0px; postion: relative")
-				div.columns
-					div.column(style="text-align: center")
-						img(src=`${drinks[i].imgUrl}`, alt=drinks[i].drink_name, style="width:75px")
-					div.column
-						p(style="text-align: left")
-							= drinks[i].drink_name
-						p
-							= drinks[i].quantity+' ea'
-						p
-							= drinks[i].price+' ฿'
-					if mode=='EDIT'
-						a.delete(href=`/order_items/${order.id}?_method=delete&drinkCode=${drinks[i].id}`, style="positive: absolute; top: 0; right: 0")
+	.field(id="order-items")
+		- for(let i=0; i < drinks.length; i+= 1)
+			div.panel-block(style="border-radius: 0px; postion: relative")
+				div.column(style="text-align: left")
+					img(src=`${drinks[i].imgUrl}`, alt=drinks[i].drink_name, style="width:75px")
+				div.column(style="text-align: left")
+					=drinks[i].drink_name+' '+drinks[i].quantity+' ea'+' '+drinks[i].price+' ฿'
+				if mode=='EDIT'
+					a.delete(href=`/order_items/${order.id}?_method=delete&drinkCode=${drinks[i].id}`)
 
